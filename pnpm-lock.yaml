@@ -26,6 +26,12 @@ importers:
 
   apps/api:
     dependencies:
+      '@hono/zod-openapi':
+        specifier: ^1.1.1
+        version: 1.1.1(hono@4.9.7)(zod@3.24.1)
+      '@scalar/hono-api-reference':
+        specifier: ^0.9.18
+        version: 0.9.18(hono@4.9.7)
       hono:
         specifier: ^4.9.7
         version: 4.9.7
@@ -35,6 +41,11 @@ importers:
         version: 4.37.1
 
 packages:
+
+  '@asteasolutions/zod-to-openapi@8.1.0':
+    resolution: {integrity: sha512-tQFxVs05J/6QXXqIzj6rTRk3nj1HFs4pe+uThwE95jL5II2JfpVXkK+CqkO7aT0Do5AYqO6LDrKpleLUFXgY+g==}
+    peerDependencies:
+      zod: ^4.0.0
 
   '@biomejs/biome@2.2.4':
     resolution: {integrity: sha512-TBHU5bUy/Ok6m8c0y3pZiuO/BZoY/OcGxoLlrfQof5s8ISVwbVBdFINPQZyFfKwil8XibYWb7JMwnT8wT4WVPg==}
@@ -289,6 +300,19 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@hono/zod-openapi@1.1.1':
+    resolution: {integrity: sha512-0IF/IqhO8ZgVHjf4MplkLqWbqctnijTJSh6yaGIcf4tQumDMbXRWHOBwHhZAIbMXlvej64Nst+CxE25qo6Pu8g==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      hono: '>=4.3.6'
+      zod: ^4.0.0
+
+  '@hono/zod-validator@0.7.3':
+    resolution: {integrity: sha512-uYGdgVib3RlGD698WR5dVM0zB3UuPY5vHKXffGUbUh7r4xY+mFIhF3/v4AcQVLrU5CQdBso8BJr4wuVoCrjTuQ==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.25.0 || ^4.0.0
+
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -412,6 +436,24 @@ packages:
 
   '@poppinss/exception@1.2.2':
     resolution: {integrity: sha512-m7bpKCD4QMlFCjA/nKTs23fuvoVFoA83brRKmObCUNmi/9tVu8Ve3w4YQAnJu4q3Tjf5fr685HYIC/IA2zHRSg==}
+
+  '@scalar/core@0.3.16':
+    resolution: {integrity: sha512-gZLKu6yzc9Md8X29OX7hN/Cgl95ReHK+t/HXbaT3O8hsbCc9JyhEZiKFpTfCH9vcgyYQ91fcq9w8tT4BVpFJUw==}
+    engines: {node: '>=20'}
+
+  '@scalar/hono-api-reference@0.9.18':
+    resolution: {integrity: sha512-YYD0HY4ru3RRA8DQcIQiF5OBJntZSSfFu14KbU/Pdd5W5x57+BQH3cAa9aDJ7M1+wOD9a2iJUSCjTh8K3GOhHw==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      hono: ^4.0.0
+
+  '@scalar/openapi-types@0.3.7':
+    resolution: {integrity: sha512-QHSvHBVDze3+dUwAhIGq6l1iOev4jdoqdBK7QpfeN1Q4h+6qpVEw3EEqBiH0AXUSh/iWwObBv4uMgfIx0aNZ5g==}
+    engines: {node: '>=20'}
+
+  '@scalar/types@0.2.15':
+    resolution: {integrity: sha512-x2aCNmkDqr3VXUHjw7wPXK9KZwHbGGMs4NuxJIzy9MbAxUS9li8HXGG0K82Q5fDm47SAM+68z0/tnWkJpu+kzg==}
+    engines: {node: '>=20'}
 
   '@sindresorhus/is@7.1.0':
     resolution: {integrity: sha512-7F/yz2IphV39hiS2zB4QYVkivrptHHh0K8qJJd9HhuWSdvf8AN7NpebW3CcDZDBQsUPMoDKWsY2WWgW7bqOcfA==}
@@ -612,12 +654,20 @@ packages:
     resolution: {integrity: sha512-jtpsQDetTnvS2Ts1fiRdci5rx0VYws5jGyC+4IYOTnIQ/wwdf6JdomlHBwqC3bJYOvaKu0C2GSZ1A60anrYpaA==}
     engines: {node: '>=20.17'}
 
+  nanoid@5.1.5:
+    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
 
   onetime@7.0.0:
     resolution: {integrity: sha512-VXJjc87FScF88uafS3JllDgvAm+c/Slfz06lorj2uAY34rlUu0Nt+v8wreiImcrgAjjIHp1rXpTDlLOGw29WwQ==}
     engines: {node: '>=18'}
+
+  openapi3-ts@4.5.0:
+    resolution: {integrity: sha512-jaL+HgTq2Gj5jRcfdutgRGLosCy/hT8sQf6VOy+P+g36cZOjI1iukdPnijC+4CmeRzg/jEllJUboEic2FhxhtQ==}
 
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
@@ -785,7 +835,15 @@ packages:
   zod@3.22.3:
     resolution: {integrity: sha512-EjIevzuJRiRPbVH4mGc8nApb/lVLKVpmUhAaR5R5doKGfAnGJ6Gr3CViAVjP+4FWSxCsybeWQdcgCtbX+7oZug==}
 
+  zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+
 snapshots:
+
+  '@asteasolutions/zod-to-openapi@8.1.0(zod@3.24.1)':
+    dependencies:
+      openapi3-ts: 4.5.0
+      zod: 3.24.1
 
   '@biomejs/biome@2.2.4':
     optionalDependencies:
@@ -931,6 +989,19 @@ snapshots:
   '@esbuild/win32-x64@0.25.4':
     optional: true
 
+  '@hono/zod-openapi@1.1.1(hono@4.9.7)(zod@3.24.1)':
+    dependencies:
+      '@asteasolutions/zod-to-openapi': 8.1.0(zod@3.24.1)
+      '@hono/zod-validator': 0.7.3(hono@4.9.7)(zod@3.24.1)
+      hono: 4.9.7
+      openapi3-ts: 4.5.0
+      zod: 3.24.1
+
+  '@hono/zod-validator@0.7.3(hono@4.9.7)(zod@3.24.1)':
+    dependencies:
+      hono: 4.9.7
+      zod: 3.24.1
+
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
       '@img/sharp-libvips-darwin-arm64': 1.0.4
@@ -1026,6 +1097,25 @@ snapshots:
       supports-color: 10.2.2
 
   '@poppinss/exception@1.2.2': {}
+
+  '@scalar/core@0.3.16':
+    dependencies:
+      '@scalar/types': 0.2.15
+
+  '@scalar/hono-api-reference@0.9.18(hono@4.9.7)':
+    dependencies:
+      '@scalar/core': 0.3.16
+      hono: 4.9.7
+
+  '@scalar/openapi-types@0.3.7':
+    dependencies:
+      zod: 3.24.1
+
+  '@scalar/types@0.2.15':
+    dependencies:
+      '@scalar/openapi-types': 0.3.7
+      nanoid: 5.1.5
+      zod: 3.24.1
 
   '@sindresorhus/is@7.1.0': {}
 
@@ -1222,11 +1312,17 @@ snapshots:
 
   nano-spawn@1.0.3: {}
 
+  nanoid@5.1.5: {}
+
   ohash@2.0.11: {}
 
   onetime@7.0.0:
     dependencies:
       mimic-function: 5.0.1
+
+  openapi3-ts@4.5.0:
+    dependencies:
+      yaml: 2.8.1
 
   path-to-regexp@6.3.0: {}
 
@@ -1399,3 +1495,5 @@ snapshots:
       youch-core: 0.3.3
 
   zod@3.22.3: {}
+
+  zod@3.24.1: {}
