@@ -9,5 +9,5 @@ node_modules/
 .turbo/
 
 # Environment Variables
-.env*
+/.env*
 !.env.example
