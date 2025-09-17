@@ -1,4 +1,3 @@
-import { LOGGER_LEVEL } from "../lib/constants";
 import { type Prisma, PrismaClient } from "./client";
 
 const prismaOptions: Prisma.PrismaClientOptions = {};
@@ -7,7 +6,9 @@ const globalForPrisma = global as unknown as {
 	baseClient: PrismaClient;
 };
 
-switch (LOGGER_LEVEL) {
+const loggerLevel = parseInt(process.env.LOGGER_LEVEL ?? "3", 10);
+
+switch (loggerLevel) {
 	case 1:
 		prismaOptions.log = ["error"];
 		break;
@@ -24,5 +25,6 @@ switch (LOGGER_LEVEL) {
 		break;
 }
 
-export const prisma =
-	globalForPrisma.baseClient || new PrismaClient(prismaOptions);
+const prisma = globalForPrisma.baseClient || new PrismaClient(prismaOptions);
+
+export default prisma;

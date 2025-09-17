@@ -1,8 +1,13 @@
 {
 	"name": "@ratekit/lib",
 	"version": "1.0.0",
+	"type": "module",
 	"scripts": {
 		"lint": "biome lint .",
 		"lint:fix": "biome lint . --write --unsafe"
+	},
+	"dependencies": {
+		"better-auth": "^1.3.11",
+		"@ratekit/prisma": "workspace:*"
 	}
 }
