@@ -1,6 +1,6 @@
 {
 	"name": "@ratekit/api",
-	"version": "0.0.2",
+	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "wrangler dev",

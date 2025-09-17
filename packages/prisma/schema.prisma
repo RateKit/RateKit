@@ -1,0 +1,22 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_DIRECT_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+  output          = "./client"
+  binaryTargets   = ["native", "debian-openssl-1.1.x"]
+}
+
+generator zod {
+  provider                 = "zod-prisma-types"
+  output                   = "./zod"
+  useMultipleFiles         = true
+  createInputTypes         = false
+  addIncludeType           = false
+  addSelectType            = false
+  validateWhereUniqueInput = false
+}
