@@ -24,5 +24,6 @@ switch (LOGGER_LEVEL) {
 		break;
 }
 
-export const prisma =
-	globalForPrisma.baseClient || new PrismaClient(prismaOptions);
+const prisma = globalForPrisma.baseClient || new PrismaClient(prismaOptions);
+
+export default prisma;
