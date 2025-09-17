@@ -27,5 +27,6 @@ if (!Number.isNaN(loggerLevel)) {
 	}
 }
 
-export const prisma =
-	globalForPrisma.baseClient || new PrismaClient(prismaOptions);
+const prisma = globalForPrisma.baseClient || new PrismaClient(prismaOptions);
+
+export default prisma;
