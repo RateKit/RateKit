@@ -1,6 +1,7 @@
 {
 	"name": "@ratekit/prisma",
 	"version": "0.0.0",
+	"type": "module",
 	"scripts": {
 		"generate": "prisma generate",
 		"migrate": "prisma migrate dev",
@@ -12,7 +13,6 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^6.16.2",
-		"zod": "^4.1.9",
-		"@ratekit/lib": "workspace:*"
+		"zod": "^4.1.9"
 	}
 }
