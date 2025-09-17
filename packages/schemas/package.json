@@ -1,0 +1,11 @@
+{
+	"name": "@ratekit/schema",
+	"version": "0.0.0",
+	"scripts": {
+		"lint": "biome lint .",
+		"lint:fix": "biome lint . --write --unsafe"
+	},
+	"dependencies": {
+		"zod": "^4.1.9"
+	}
+}
