@@ -9,7 +9,8 @@
 	"dependencies": {
 		"@hono/zod-openapi": "^1.1.1",
 		"@scalar/hono-api-reference": "^0.9.18",
-		"hono": "^4.9.7"
+		"hono": "^4.9.7",
+		"@ratekit/lib": "workspace:*"
 	},
 	"devDependencies": {
 		"wrangler": "^4.4.0"

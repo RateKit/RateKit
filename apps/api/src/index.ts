@@ -1,4 +1,5 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
+import { APP_NAME } from "@ratekit/lib/constants";
 import { Scalar } from "@scalar/hono-api-reference";
 import pkg from "../package.json";
 
@@ -9,7 +10,7 @@ app.get(
 	Scalar({
 		url: "/openapi.json",
 		theme: "elysiajs",
-		pageTitle: "RateKit API Documentation",
+		pageTitle: `${APP_NAME} API Documentation`,
 	}),
 );
 
@@ -17,8 +18,8 @@ app.doc("/openapi.json", {
 	openapi: "3.0.0",
 	info: {
 		version: pkg.version,
-		title: "RateKit API",
-		description: "RateKit API Documentation",
+		title: `${APP_NAME} API`,
+		description: `${APP_NAME} API Documentation`,
 	},
 });
 
