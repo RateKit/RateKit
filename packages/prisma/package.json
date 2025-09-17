@@ -3,11 +3,19 @@
 	"version": "0.0.0",
 	"description": "",
 	"main": "index.js",
-	"scripts": {},
+	"scripts": {
+		"generate": "prisma generate",
+		"migrate": "prisma migrate dev",
+		"studio": "prisma studio"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"prisma": "^6.16.2",
 		"prisma-zod-generator": "^1.20.3"
+	},
+	"dependencies": {
+		"@prisma/client": "^6.16.2"
 	}
 }

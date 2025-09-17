@@ -41,10 +41,17 @@ importers:
         version: 4.37.1
 
   packages/prisma:
+    dependencies:
+      '@prisma/client':
+        specifier: ^6.16.2
+        version: 6.16.2(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)
     devDependencies:
+      prisma:
+        specifier: ^6.16.2
+        version: 6.16.2(typescript@5.9.2)
       prisma-zod-generator:
         specifier: ^1.20.3
-        version: 1.20.3(typescript@5.9.2)(zod@3.24.1)
+        version: 1.20.3(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)(zod@3.24.1)
 
 packages:
 
@@ -887,6 +894,16 @@ packages:
     peerDependencies:
       zod: '>=3.25.0 <5'
 
+  prisma@6.16.2:
+    resolution: {integrity: sha512-aRvldGE5UUJTtVmFiH3WfNFNiqFlAtePUxcI0UEGlnXCX7DqhiMT5TRYwncHFeA/Reca5W6ToXXyCMTeFPdSXA==}
+    engines: {node: '>=18.18'}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   prompts@2.4.2:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
     engines: {node: '>= 6'}
@@ -1333,8 +1350,9 @@ snapshots:
 
   '@poppinss/exception@1.2.2': {}
 
-  '@prisma/client@6.16.2(typescript@5.9.2)':
+  '@prisma/client@6.16.2(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)':
     optionalDependencies:
+      prisma: 6.16.2(typescript@5.9.2)
       typescript: 5.9.2
 
   '@prisma/config@6.16.2':
@@ -1776,9 +1794,9 @@ snapshots:
 
   prettier@3.6.2: {}
 
-  prisma-zod-generator@1.20.3(typescript@5.9.2)(zod@3.24.1):
+  prisma-zod-generator@1.20.3(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)(zod@3.24.1):
     dependencies:
-      '@prisma/client': 6.16.2(typescript@5.9.2)
+      '@prisma/client': 6.16.2(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)
       '@prisma/generator-helper': 6.16.2
       '@prisma/internals': 6.16.2(typescript@5.9.2)
       ajv: 8.17.1
@@ -1791,6 +1809,15 @@ snapshots:
       - magicast
       - prisma
       - typescript
+
+  prisma@6.16.2(typescript@5.9.2):
+    dependencies:
+      '@prisma/config': 6.16.2
+      '@prisma/engines': 6.16.2
+    optionalDependencies:
+      typescript: 5.9.2
+    transitivePeerDependencies:
+      - magicast
 
   prompts@2.4.2:
     dependencies:
